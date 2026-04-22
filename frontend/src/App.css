@@ -1,0 +1,223 @@
+.screen-frame {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  border: 2px solid var(--line);
+  background: rgba(239, 239, 239, 0.93);
+}
+
+.screen-frame.wide {
+  width: min(1260px, 100%);
+}
+
+.window-bar {
+  display: grid;
+  grid-template-columns: 120px 1fr 120px;
+  align-items: center;
+  border-bottom: 2px solid var(--line);
+  min-height: 38px;
+}
+
+.window-dots {
+  display: flex;
+  gap: 8px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.window-dots span {
+  width: 13px;
+  height: 13px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 10px;
+}
+
+.window-bar h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.toolbar {
+  padding: 8px;
+  border-bottom: 2px solid var(--line);
+}
+
+.primary-btn {
+  border: 2px solid var(--line);
+  background: #ebebeb;
+  border-radius: 6px;
+  padding: 6px 20px;
+  font-family: var(--font-ui);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.table-wrap {
+  padding: 20px 12px;
+}
+
+.grid-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.grid-table th,
+.grid-table td {
+  border: 1px solid var(--line);
+  padding: 8px 6px;
+  background: var(--cell);
+  text-align: left;
+  vertical-align: top;
+  font-size: 28px;
+  height: 56px;
+}
+
+.grid-table th {
+  background: var(--cell-head);
+  font-weight: 500;
+}
+
+.sales-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  padding: 18px 20px 10px;
+}
+
+.left-col,
+.right-col {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  row-gap: 8px;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.left-col label,
+.right-col label {
+  font-size: 34px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 2px solid var(--line);
+  background: #f1f1f1;
+  font-family: var(--font-ui);
+  font-size: 30px;
+  height: 42px;
+  padding: 2px 6px;
+}
+
+textarea {
+  height: 170px;
+  resize: vertical;
+}
+
+.compact {
+  margin-top: 14px;
+}
+
+.compact th,
+.compact td {
+  font-size: 24px;
+  height: 50px;
+}
+
+.compact input {
+  height: 34px;
+  font-size: 22px;
+}
+
+.totals {
+  width: min(560px, 100%);
+  margin: 14px 16px 18px auto;
+  display: grid;
+  grid-template-columns: 1fr 210px;
+  gap: 8px 12px;
+  align-items: center;
+}
+
+.totals label {
+  text-align: right;
+  font-size: 38px;
+}
+
+@media (max-width: 1200px) {
+  .window-bar h1 {
+    font-size: 24px;
+  }
+
+  .primary-btn {
+    font-size: 22px;
+  }
+
+  .grid-table th,
+  .grid-table td {
+    font-size: 18px;
+  }
+
+  .left-col label,
+  .right-col label,
+  .totals label,
+  input,
+  select,
+  textarea {
+    font-size: 18px;
+  }
+
+  input {
+    height: 34px;
+  }
+
+  textarea {
+    height: 120px;
+  }
+}
+
+@media (max-width: 900px) {
+  #root {
+    padding: 10px;
+  }
+
+  .window-bar {
+    grid-template-columns: 90px 1fr 90px;
+  }
+
+  .sales-form {
+    grid-template-columns: 1fr;
+  }
+
+  .left-col,
+  .right-col {
+    grid-template-columns: 120px 1fr;
+  }
+
+  .compact {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .compact table {
+    min-width: 900px;
+  }
+
+  .totals {
+    margin-right: 10px;
+    grid-template-columns: 1fr 140px;
+  }
+}
